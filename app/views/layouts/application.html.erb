@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Golo</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title>golo</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div id="page">
+      <div id="navigation">
+        <% if(session[:user].nil?) %>
+        
+        <% else %>
+          <%= link_to 'You', :controller => "home", :action => "you" %>
+        <% end %>        
+      </div>
+      <div id="content">
 
-</body>
+        <%= yield %>
+      </div>
+
+      <div id="footer">
+        &copy; Willytown Connections Inc.
+      </div>
+    </div>
+  </body>
 </html>

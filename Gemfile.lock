@@ -119,7 +119,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.0)
   heroku
   rails (= 3.0.0)
-  rspec-rails (= 2.0.0.beta.18)
+  rspec-rails
   spork
   sqlite3-ruby
   webrat

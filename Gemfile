@@ -15,7 +15,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 group :development, :test do
   gem 'annotate-models'
-  gem "rspec-rails",
+  gem "rspec-rails"
   gem 'spork'
   gem 'webrat'
   gem 'ZenTest'
