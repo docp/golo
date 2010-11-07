@@ -1,0 +1,27 @@
+<div id="user">
+  <p id="notice"><%= notice %></p>
+
+  <div id="sidebar">
+    <div id="photo">
+      <img src="../../images/user.png" width="75" height="100"/>
+    </div>
+    <div id="buddies">
+      <span>buddies</span>
+      <% session[:user].get_buddies.each do |buddy| %>
+        <%=  link_to buddy.name, :controller => "users", :action => "show", :id => buddy.id %>
+      <% end %>
+    </div>
+
+
+  </div>
+
+
+  
+  <div id="properties">
+    Personal information
+    <div class="headline"></div>
+    <span>Name:<%= session[:user].name %></span>
+    
+  </div>
+
+</div>

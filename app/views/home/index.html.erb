@@ -1,0 +1,17 @@
+<div id="index">
+  <ul class="form">
+    <li>
+      <label for="username">username</label><input id="username" type="text" />
+    </li>
+    <li>
+      <label for="password">password</label><input id="password" type="password" />
+    </li>
+  </ul>
+  <div id="buttons">
+    <%= link_to 'Signup', new_user_path %>
+    <%= link_to 'Login', :controller => "home", :action => "you" %>
+  </div>
+  
+</div>
+<span style="color:red; left:400px; position:relative; top:-35px;"><strong>Achtung: </strong>Internet Explorer 6 wird nicht unterstützt.</span>
+
