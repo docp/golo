@@ -1,19 +1,32 @@
 Golo::Application.routes.draw do
-  get "home/index"
 
-  resources :users
+resources :users
+resources :sessions, :only => [:new, :create, :destroy]
+
+match '/login', :to => 'sessions#new'
+match 'logout', :to => 'sessions#destroy'
+match '/show', :to => 'users#show'
+match '/signup', :to => 'users#new'
+
+match '/about', :to => 'pages#about'
+match '/help', :to => 'pages#help'
+match '/contact', :to => 'pages#contact'
+
+
+#  get "pages/contact"
+#  get "pages/about"
+#  get "pages/help"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  # match 'users//:id' => 'catalog#view'
+  #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
-  match 'home/you' => 'home#you'
-  match 'users/:id' => 'users#show'
-  match 'users/add/:id' => 'users#add'
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
@@ -54,7 +67,7 @@ Golo::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
+   root :to => "pages#home"
 
   # See how all your routes lay out with "rake routes"
 
@@ -62,3 +75,4 @@ Golo::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+

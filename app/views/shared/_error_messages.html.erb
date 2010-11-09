@@ -1,0 +1,16 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %><%# puts error or errors%>
+      prohibited to save your profile:
+    </h2>
+    <p>There were problems with the following fields:</p>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

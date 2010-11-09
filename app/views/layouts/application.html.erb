@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>golo</title>
+    <title><%= title %></title>
     <%= stylesheet_link_tag :all %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
@@ -10,20 +10,23 @@
 
     <div id="page">
       <div id="navigation">
-        <% if(session[:user].nil?) %>
-        
-        <% else %>
-          <%= link_to 'You', :controller => "home", :action => "you" %>
-        <% end %>        
+        <%= render "layouts/navigation" %>
       </div>
+      <% flash.each do |key, value| %>
+        <div class = "flash <%= key %>" %>
+        <%= value %>
+        </div>
+      <% end %>
       <div id="content">
 
         <%= yield %>
       </div>
 
       <div id="footer">
+        <%= render "layouts/footer" %>
         &copy; Willytown Connections Inc.
       </div>
     </div>
   </body>
 </html>
+

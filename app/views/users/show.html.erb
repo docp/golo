@@ -1,32 +1,4 @@
-<div id="user">
-  <p id="notice"><%= notice %></p>
+<h1>
+  <%= @user.name %>
+ </h1>
 
-  <div id="sidebar">
-    <div id="photo">
-      <img src="../../images/user.png" width="75" height="100"/>
-    </div>
-    <div id="buddies">
-      <span>buddies</span>
-      <% @user.get_buddies.each do |buddy| %>
-        <% if(buddy.id == session[:user].id) %>
-          <%=  link_to buddy.name, :controller => "home", :action => "you" %>
-        <% else %>
-          <%=  link_to buddy.name, :controller => "users", :action => "show", :id => buddy.id %>
-        <% end %>        
-      <% end %>
-    </div>
-
-
-  </div>
-
-
-  
-  <div id="properties">
-    <%= link_to "add buddy", :controller => "users", :action => 'add', :id => @user.id %>
-    Personal information
-    <div class="headline"></div>
-    <span>Name:<%= @user.name %></span>
-    
-  </div>
-
-</div>

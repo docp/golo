@@ -11,21 +11,22 @@ gem 'rails', '3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3-ruby', '1.3.2' ,:require => 'sqlite3'
 
 group :development, :test do
-  gem 'annotate-models'
-  gem 'rspec-rails'
-  gem 'spork'
-  gem 'webrat'
-  gem 'ZenTest'
-  gem 'autotest'
-  gem 'autotest-rails-pure'
-  gem 'autotest-notification'
+  gem 'annotate-models', '1.0.4'
+  gem 'rspec-rails', '2.0.0'
+  gem 'spork', '0.8.4'
+  gem 'webrat', '0.7.2'
+  gem 'ZenTest', '4.4.0'
+  gem 'autotest', '4.4.0'
+  gem 'autotest-rails-pure', '4.1.0'
+  gem 'autotest-notification', '2.3.1'
   gem 'factory_girl_rails', '1.0'
 end
 
-gem 'heroku'
+gem 'heroku', '1.12.2'
+
 # gem 'redgreen'
 
 # Use unicorn as the web server

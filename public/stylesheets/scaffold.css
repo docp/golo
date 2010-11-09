@@ -27,7 +27,7 @@ a {
     margin: 0px;
 }
 
-a:hover { 
+a:hover {
     color: lightsteelblue;
 }
 
@@ -85,6 +85,12 @@ div.field, div.actions {
     list-style: square;
 }
 
+
+
+.success {
+    border: 2px solid steelblue;
+    border-color: steelblue;
+}
 /*****************************************
  GLOBAL LAYOUT
 ******************************************/
@@ -155,6 +161,9 @@ div.field, div.actions {
     float: left;
 }
 
+.horizontal ul li {
+    display: inline;
+}
 /*****************************************
  SHOW USER LAYOUT
 ******************************************/
@@ -203,3 +212,4 @@ div.field, div.actions {
     border-left: 1px solid steelblue;
     padding: 10px;
 }
+
