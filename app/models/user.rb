@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20101101173124
+#
+# Table name: users
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#
+
 require 'digest' # required for encryption
 
 class User < ActiveRecord::Base
@@ -20,6 +34,7 @@ class User < ActiveRecord::Base
                     :format => { :with => email_regex }
   before_save :encrypt_password
 
+  # authentication func, returns user if valid email/pw combination, else nil
   def self.authenticate(email, submitted_password)
     user = find_by_email(email)
     return nil if user.nil?
