@@ -10,6 +10,10 @@ body, p, ol, ul, td {
     line-height: 18px;
 }
 
+img {
+    border: 0px;
+}
+
 pre {
     background-color: #eee;
     padding: 10px;
@@ -18,28 +22,36 @@ pre {
 
 a {
     display: block;
-    width: 70px;
     height: 20px;
+    margin: 0px 10px 0px 10px;
     color: steelblue;
     text-align: center;
     text-decoration: none;
-    padding: 0px;
-    margin: 0px;
 }
 
 a:hover {
     color: lightsteelblue;
 }
 
-input {
-    border: 1px solid grey;
+div.field input {
+    float: left;
+    border: 1px solid lightgrey;
     max-width: 150px;
     min-width: 100px;
 }
 
 label {
     display: block;
-    width: 100px;
+    width: 150px;
+    height: 15px;
+    float: left;
+    margin: 3px;
+    color: steelblue;
+}
+
+div.labelspacer {
+    display: block;
+    width: 150px;
     height: 15px;
     float: left;
     margin: 3px;
@@ -48,6 +60,34 @@ label {
 
 div.field, div.actions {
     margin-bottom: 10px;
+    display: block;
+    height: 20px;
+    width: 500px;
+}
+
+
+
+div.submit_150 input {
+    cursor:pointer;
+    border: 0px;
+    width: 150px;
+    height: 30px;
+    color:#666;
+    font-weight:bold;
+    padding-bottom: 5px;
+    background: url('../images/button_150.png');
+}
+
+div.form {
+    width: 500px;
+}
+
+div.form span {
+    float: left;
+}
+
+div.form a {
+    float: left;
 }
 
 #notice {
@@ -97,13 +137,12 @@ div.field, div.actions {
 #navigation {
     margin-top: 30px;
     height: 30px;
-    border-bottom: 1px solid steelblue;
+    border-bottom: 1px solid lightsteelblue;
 }
 
 #navigation a {
     float: left;
-    margin: 5px;
-    width: 100px;
+    margin: 5px 20px 5px 20px;
     display: block;
 }
 
@@ -119,11 +158,19 @@ div.field, div.actions {
     margin-bottom: 10px;
 }
 
-#footer {
+div.footer {
     width: 100%;
     height: 30px;
-    text-align: left;
+    float: left;
     /* border-top: 1px solid steelblue; */
+}
+
+div.footer span {
+    float: left;
+}
+
+div.footer a {
+    float: left;
 }
 
 .headline {
@@ -141,9 +188,24 @@ div.field, div.actions {
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
-    margin-bottom: 40px;
-    border: 1px solid steelblue;
+    margin-bottom: 0px;
 }
+
+#index #welcome {
+    height: 300px;
+}
+
+#index .logo {
+    margin-bottom: 40px;
+}
+
+#index span {
+    color:red;
+    width: 300px;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
 
 #index #buttons a {
     width: 100px;
@@ -151,7 +213,7 @@ div.field, div.actions {
     float: right;
 }
 
-#welcome h1{
+#welcome h1 {
     text-align: center;
 }
 
