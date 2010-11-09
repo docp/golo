@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
+    @friends = @user.followers(@user.id) + @user.following(@user.id)
   end
 
   def new

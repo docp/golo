@@ -1,4 +1,14 @@
-<h1>
-  <%= @user.name %>
- </h1>
+<div id = "user">
+  <h1>
+    <%= @user.name %>
+  </h1>
+  <div id = "sidebar">
+    <p>
+      <b>buddies</b>
+    </p>
+    <% @friends.each do |buddy| %>
+    <p><%= link_to buddy.name, user_path(buddy.id) %></p>
+    <% end %>
+  </div>
+</div>
 

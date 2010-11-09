@@ -6,3 +6,5 @@ Factory.define :user do |user|
   user.password_confirmation    "Very_Geheim"
 end
 
+Factory.sequence :email do |n| "Max#{n}@Mustermann.biz" end
+

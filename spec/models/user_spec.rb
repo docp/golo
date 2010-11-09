@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe User do
 
-    before(:each) do
-		@attr = { :name => "Max Mustermann",
+  before(:each) do
+    @attr = { :name => "Max Mustermann",
 		          :email => "max@mustermann.de",
 		          :password => "Geheim_Geheim",
 		          :password_confirmation => "Geheim_Geheim" }
@@ -116,6 +116,17 @@ describe User do
         matching_user = User.authenticate(@attr[:email], @attr[:password])
         matching_user.should == @user
       end
+    end
+  end
+  describe "relationships" do
+
+    before(:each) do
+      @user = User.create!(@attr)
+      @followed = Factory(:user, :email => Factory.next(:email))
+    end
+
+    it "should have a relationship model" do
+      @user.should respond_to(:relationships)
     end
   end
 end
