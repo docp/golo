@@ -1,0 +1,12 @@
+<div>
+  <%= form_for(@users) do %>
+    <div class = "field">
+      <%= f.label :city %><br>
+      <%= f.text_field :city %>
+    </div>
+    <div class = "actions">
+      <%= f.submit "Search" %>
+    </div>
+  <% end %>
+</div>
+

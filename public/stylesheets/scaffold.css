@@ -197,8 +197,12 @@ img.centered {
 
 #user #buddies {
     display: block;
-    width: 80px;
+    width: 100px;
     height: 300px;
+}
+
+#user #sidebar a{
+    width: 100px;
 }
 
 #user #buddies span {

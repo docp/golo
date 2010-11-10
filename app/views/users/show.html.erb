@@ -1,7 +1,8 @@
 <div id = "user">
   <h1>
-    <%= @user.name %>
+    <%= @user.name %>, <%= @user.city %>
   </h1>
+    <%= link_to "Find People", search_path %>
   <div id = "sidebar">
     <p>
       <b>buddies</b>
@@ -10,5 +11,6 @@
     <p><%= link_to buddy.name, user_path(buddy.id) %></p>
     <% end %>
   </div>
+  <div >
 </div>
 

@@ -50,11 +50,14 @@ describe UsersController do
   end
 
   describe "POST 'create'" do
+
     describe "failure" do
+
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "",
+        @attr = { :name => "", :email => "", :city => "", :password => "",
                   :password_confirmation => ""}
       end
+
       it "should not create a user" do
         lambda do
           post :create, :user => @attr
@@ -77,6 +80,7 @@ describe UsersController do
       before(:each) do
 		  @attr = { :name => "Max Mustermann",
 		            :email => "max@mustermann.de",
+		            :city => "Musterstadt",
 		            :password => "Geheim_Geheim",
 		            :password_confirmation => "Geheim_Geheim" }
 	    end

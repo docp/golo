@@ -5,6 +5,7 @@ describe User do
   before(:each) do
     @attr = { :name => "Max Mustermann",
 		          :email => "max@mustermann.de",
+		          :city => "Musterstadt",
 		          :password => "Geheim_Geheim",
 		          :password_confirmation => "Geheim_Geheim" }
 	end
@@ -21,6 +22,11 @@ describe User do
   it "should require an email adress" do
   	no_email_user = User.create(@attr.merge(:email => ""))
   	no_email_user.should_not be_valid
+  end
+
+  it "should require a city" do
+    no_city_user = User.new(@attr.merge(:city => ""))
+    no_city_user.should_not be_valid
   end
 
   it "should have username shorter than 32 characters" do

@@ -2,16 +2,19 @@ Golo::Application.routes.draw do
 
 resources :users
 resources :sessions, :only => [:new, :create, :destroy]
+#resources :relationships, :only => [:create, :destroy]
 
 match '/login', :to => 'sessions#new'
 match 'logout', :to => 'sessions#destroy'
 match '/show', :to => 'users#show'
 match '/signup', :to => 'users#new'
 
+match '/search', :to => 'pages#search'
 match '/about', :to => 'pages#about'
 match '/help', :to => 'pages#help'
 match '/contact', :to => 'pages#contact'
 
+root :to => "pages#home"
 
 #  get "pages/contact"
 #  get "pages/about"
@@ -67,7 +70,7 @@ match '/contact', :to => 'pages#contact'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "pages#home"
+
 
   # See how all your routes lay out with "rake routes"
 
