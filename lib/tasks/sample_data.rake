@@ -11,16 +11,19 @@ end
 
 def make_users
   admin = User.create!(:name => "First User",
-                            :email => "first@user.com",
-                            :password => "Very_Geheim",
-                            :password_confirmation => "Very_Geheim")
-  admin.toggle!(:admin)
-  99.times do |n|
-    name = Faker::Name.name,
-    email = "example-#{n+1}@user.com",
-    password = "password",
+                       :email => "first@user.com",
+                       :city => "Berlin",
+                       :password => "Very_Geheim",
+                       :password_confirmation => "Very_Geheim")
+#  admin.toggle!(:admin)
+  10.times do
+    name = Faker::Name.name
+    email = Faker::Internet.email
+    city = Faker::Address.city
+    password = "Very_Geheim"
     User.create!(:name => name,
                  :email => email,
+                 :city => city,
                  :password => password,
                  :password_confirmation => password)
   end

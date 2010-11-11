@@ -4,6 +4,7 @@ describe Relationship do
   before(:each) do
     @follower = Factory(:user)
     @followed = Factory(:user, :email => Factory.next(:email))
+    # .build automatically sets the foreign_key
     @relationship = @follower.relationships.build(:followed_id => @followed.id)
   end
 

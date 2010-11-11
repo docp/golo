@@ -2,6 +2,8 @@
   <h1>
     <%= @user.name %>
   </h1>
+  <%#= link_to "Find People", search_path %>
+  <%= render 'layouts/search_by_city' %>
   <div id = "sidebar">
     <p>
       <b>buddies</b>
@@ -9,6 +11,7 @@
     <% @friends.each do |buddy| %>
     <p><%= link_to buddy.name, user_path(buddy.id) %></p>
     <% end %>
+
   </div>
 </div>
 

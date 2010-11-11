@@ -77,6 +77,7 @@ describe UsersController do
       before(:each) do
 		  @attr = { :name => "Max Mustermann",
 		            :email => "max@mustermann.de",
+		            :city => "Musterstadt.de",
 		            :password => "Geheim_Geheim",
 		            :password_confirmation => "Geheim_Geheim" }
 	    end
